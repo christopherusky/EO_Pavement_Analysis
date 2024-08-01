@@ -1,7 +1,11 @@
 ![image](https://github.com/user-attachments/assets/04a78093-f08b-4bd5-9685-153a16b6d2f4)
 
+## eo_pavement_analysis
 
-Step 1. Create Layers. 
+The Earth Observation Pavement Analysis is a QGOS 3.0+ plugin for the extraction of raster data representing unpaved roads. Once extracted the data set created is used to train a machine learning model for the assessment of unpaved roads in Low and Middle Income Countries, particulary in the Global South. The outcomes from this enable a low cost / cost effective way to maximise limited resouces in the maintenance of unpaved roads as vital arteries connecting people, goods and services. 
+
+
+### Step 1. Create Layers. 
 
 This creates the layers required for your project, these are:
 
@@ -17,7 +21,7 @@ as shown in the image below.
 
 ![image](https://github.com/user-attachments/assets/fdc6b558-03cb-48f4-908d-07e1fea81544)
 
-Step 2. Load the Road Centre Lines
+### Step 2. Load the Road Centre Lines
 
 This loads your road centerlines into the QGIS layer group "Road Cente Lines" as shown in the image below
 
@@ -29,7 +33,7 @@ and a full screen view where can you view the Road Centre Lines as loaded into t
 ![image](https://github.com/user-attachments/assets/eb2c1953-d48f-400c-9be1-1d80c42c2925)
 
 
-Step 3. Create the Bounding Boxes
+### Step 3. Create the Bounding Boxes
 
 This creates bounding boxes along the Road Centre Lines as loaded in the previous step. A pop up dialogue asks you to set the road width, please provide a measurement between 5m - 15m (metres)
 
@@ -49,10 +53,16 @@ Once completed you will now have bounding boxes created along the length of your
 
 ![image](https://github.com/user-attachments/assets/ac3f81d1-c83b-4f50-9cfe-78ba6435e481)
 
+### Step 5. Raster extracts to file. 
 
+This final step in preparing your data set creates the trimmed raster extracts for each of the features in your bounding boxes. 
+
+The on button click will ask you to specify where you want to save the extacts.
+
+Once running the progress bar will update as it processes each raster extract. It does this one file at a time as I found on a machine with limited resources and a large number of features to extract, it was taking too long and running hot.
+
+When completed you will have a series of folders containin the raster extracts!
 
 ![image](https://github.com/user-attachments/assets/497380c9-cf58-4868-b65a-70534dd443a6)
 
-Step 5. Raster extracts to file. 
-The on button click will ask you to specify where you want to save the extacts.
-Once running the progress bar will update as it processes each raster extract. It does this one file at a time as I found on a machine with limited resources it was taking too long and running hot.
+
