@@ -10,10 +10,10 @@ version=0.1
 author=TRL Software
 email=ckettell@trl.co.uk
 
-about=This plugin is for the preperation of data sets for Machine learning in the
+about=This plugin is for the preperation of data sets for Machine learning in the analysis of earth observations imagery for pavement analyis (road condition)
 
 tracker=http://bugs
-repository=http://repo
+repository=https://github.com/christopherusky/eo_pavement_analysis
 # End of mandatory metadata
 
 # Recommended items:
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=http://homepage
+homepage=https://github.com/christopherusky/eo_pavement_analysis
 category=Plugins
 icon=icon.png
 # experimental flag
