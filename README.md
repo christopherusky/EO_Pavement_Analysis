@@ -9,13 +9,13 @@ The Earth Observation Pavement Analysis is a QGOS 3.0+ plugin for the extraction
 
 This creates the layers required for your project, these are:
 
-  Road Centre Lines - vector file for the road centre lines along which the sample grid will create the bounding boxes
+  - Road Centre Lines - vector file for the road centre lines along which the sample grid will create the bounding boxes
 
-  Sample Grid - the layer in which for each class of road condition the bounding boxes are created
+  - Sample Grid - the layer in which for each class of road condition the bounding boxes are created
 
-  Source Raster - the virtual raster from which the sample grid will use each feature to clip the raster
+  - Source Raster - the virtual raster from which the sample grid will use each feature to clip the raster
 
-  Clipped Rasters - the resuling clipped rasters. 
+  - Clipped Rasters - the resuling clipped rasters. 
 
 as shown in the image below. 
 
