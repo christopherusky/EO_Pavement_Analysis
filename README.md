@@ -2,24 +2,38 @@
 
 
 Step 1. Create Layers. 
+
 This creates the layers required for your project, these are:
 
-Road Centre Lines - vector file for the road centre lines along which the sample grid will create the bounding boxes
-Sample Grid - the layer in which for each class of road condition the bounding boxes are created
-Source Raster - the virtual raster from which the sample grid will use each feature to clip the raster
-Clipped Rasters - the resuling clipped rasters. 
+  Road Centre Lines - vector file for the road centre lines along which the sample grid will create the bounding boxes
+
+  Sample Grid - the layer in which for each class of road condition the bounding boxes are created
+
+  Source Raster - the virtual raster from which the sample grid will use each feature to clip the raster
+
+  Clipped Rasters - the resuling clipped rasters. 
+
+as shown in the image below. 
 
 ![image](https://github.com/user-attachments/assets/fdc6b558-03cb-48f4-908d-07e1fea81544)
 
-Step 2. 
+Step 2. Load the Road Centre Lines
+
+This loads your road centerlines into the QGIS layer group "Road Cente Lines" as shown in the image below
 
 
 ![image](https://github.com/user-attachments/assets/6ec4b1ce-15ff-4c88-b8a1-799d7365a743)
 
+and a full screen view where can you view the Road Centre Lines as loaded into the QGIS project. 
 
 ![image](https://github.com/user-attachments/assets/eb2c1953-d48f-400c-9be1-1d80c42c2925)
 
 
+Step 3. Create the Bounding Boxes
+
+This creates bounding boxes along the Road Centre Lines as loaded in the previous step. A pop up dialogue asks you to set the road width, please provide a measurement between 5m - 15m (metres)
+
+Once completed you will now have bounding boxes created along the length of your Road Centre Lines set to the width you have used, an example of this is shown in the image below. 
 
 ![image](https://github.com/user-attachments/assets/8034bde3-8280-491c-94fc-2d2f2d98ebb5)
 
