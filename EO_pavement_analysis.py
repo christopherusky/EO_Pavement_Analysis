@@ -343,7 +343,7 @@ class EarthObservationPavementAnalysis:
                 self.logger.info(f"{ROAD_CENTRE_LINES_GROUP} group not found.")
                 return
 
-            road_width, ok = QInputDialog.getInt(None, "Road Width", "Enter road width (3-15):", min=3, max=15, step=1)
+            road_width, ok = QInputDialog.getInt(None, "Road Width", "Enter road width (3-15 in meters):", min=3, max=15, step=1)
             if not ok:
                 self.logger.info("Road width selection cancelled.")
                 return
