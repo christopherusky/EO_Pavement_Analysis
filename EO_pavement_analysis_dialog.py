@@ -80,4 +80,7 @@ class EarthObservationPavementAnalysisDialog(QDialog, FORM_CLASS):
     def get_box_width(self) -> float:
         """Get the width of the boxes to be created."""
         return self.boxWidthSpinBox.value()
-
+    
+    def get_debug_option(self) -> bool:
+        """Get the state of the debug_option checkbox."""
+        return self.debug_option.isChecked()

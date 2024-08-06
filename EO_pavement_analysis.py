@@ -123,14 +123,11 @@ class LayerManager:
 
 class EarthObservationPavementAnalysis:
     def __init__(self, iface):
-        # Set up logging first
+        # Set up logging first, but don't add any handlers yet
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.DEBUG)
-        handler = logging.FileHandler(os.path.join(os.path.dirname(__file__), 'plugin_log.txt'))
-        handler.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
+        self.log_handler = None
+        
         self.dlg = EarthObservationPavementAnalysisDialog()
 
         self.logger.debug("Initializing EarthObservationPavementAnalysis")
@@ -167,7 +164,24 @@ class EarthObservationPavementAnalysis:
         if not QgsApplication.processingRegistry().providers():
             processing.core.Processing.initialize()
 
+        self.setup_logging()
+
         self.logger.debug("EarthObservationPavementAnalysis initialization complete")
+
+    def setup_logging(self):
+        if self.dlg.get_debug_option():
+            if not self.log_handler:
+                self.log_handler = logging.FileHandler(os.path.join(os.path.dirname(__file__), 'plugin_log.txt'))
+                self.log_handler.setLevel(logging.DEBUG)
+                formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                self.log_handler.setFormatter(formatter)
+                self.logger.addHandler(self.log_handler)
+            self.logger.debug("Debug logging enabled")
+        else:
+            if self.log_handler:
+                self.logger.removeHandler(self.log_handler)
+                self.log_handler = None
+            self.logger.debug("Debug logging disabled")
 
     def tr(self, message: str) -> str:
         return QCoreApplication.translate('EarthObservationPavementAnalysis', message)
@@ -224,6 +238,7 @@ class EarthObservationPavementAnalysis:
             self.setup_connections()
 
         self.populate_layer_list()
+        self.setup_logging()  # Call this here to update logging based on current checkbox state
         result = self.dlg.exec_()
         if result:
             self.logger.info("Dialog closed with OK")
@@ -234,6 +249,7 @@ class EarthObservationPavementAnalysis:
         self.dlg.sectionRoadButton.clicked.connect(self.section_road)
         self.dlg.loadRastersButton.clicked.connect(self.load_source_rasters)
         self.dlg.extractRastersButton.clicked.connect(self.extract_rasters)
+        self.dlg.debug_option.stateChanged.connect(self.setup_logging)
 
     def populate_layer_list(self):
         layers = QgsProject.instance().layerTreeRoot().children()
