@@ -791,6 +791,19 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QCheckBox" name="debug_option">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>490</y>
+     <width>171</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enable debug logging </string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
