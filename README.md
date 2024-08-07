@@ -1,8 +1,12 @@
+## Earth Observation Pavement Analysis Toolkit.
+
 ![image](https://github.com/user-attachments/assets/04a78093-f08b-4bd5-9685-153a16b6d2f4)
 
 ## eo_pavement_analysis
 
 The Earth Observation Pavement Analysis is a QGOS 3.0+ plugin for the extraction of raster data representing unpaved roads. Once extracted the data set created is used to train a machine learning model for the assessment of unpaved roads in Low and Middle Income Countries, particulary in the Global South. The outcomes from this enable a low cost / cost effective way to maximise limited resouces in the maintenance of unpaved roads as vital arteries connecting people, goods and services. 
+
+If you are looking for a method for preparing raster extracts, this could also be for you :) 
 
 
 ### Step 1. Create Layers. 
@@ -23,7 +27,7 @@ as shown in the image below.
 
 ### Step 2. Load the Road Centre Lines
 
-This loads your road centerlines into the QGIS layer group "Road Cente Lines" as shown in the image below
+This loads your road centerlines into the QGIS layer group "Road Cente Lines" as shown in the image below. The onclick event opens a file explorer letting you select your road centre lines, either a single shapefile or multiple shapefiles
 
 
 ![image](https://github.com/user-attachments/assets/6ec4b1ce-15ff-4c88-b8a1-799d7365a743)
@@ -41,15 +45,17 @@ Once completed you will now have bounding boxes created along the length of your
 
 ![image](https://github.com/user-attachments/assets/8034bde3-8280-491c-94fc-2d2f2d98ebb5)
 
-
+This shows the bounding boxes which have been created along the Road Centre Lines layer and using the width specified 
 
 ![image](https://github.com/user-attachments/assets/1471ec58-99d4-4bd5-a955-62a2b8fc4db9)
 
-
+And
 
 ![image](https://github.com/user-attachments/assets/1b552331-b2ed-49b2-8112-798d4e89fb7f)
 
+### Step 4. Create a Virtual Raster
 
+The onclick event opens a file explorer from which can you select the source rasters you want to use in your project, as with previous steps you can select multiple or a single raster file. If you cannot see your raster files when using the file explorer change the file types (bottom right hand corner) to Show all files. You should then be able to select and load your raster to the virtual raster which is then displayed.
 
 ![image](https://github.com/user-attachments/assets/ac3f81d1-c83b-4f50-9cfe-78ba6435e481)
 
