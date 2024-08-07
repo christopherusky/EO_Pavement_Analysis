@@ -49,15 +49,23 @@ This shows the bounding boxes which have been created along the Road Centre Line
 
 ![image](https://github.com/user-attachments/assets/1471ec58-99d4-4bd5-a955-62a2b8fc4db9)
 
-And
 
-![image](https://github.com/user-attachments/assets/1b552331-b2ed-49b2-8112-798d4e89fb7f)
 
 ### Step 4. Create a Virtual Raster
 
 The onclick event opens a file explorer from which can you select the source rasters you want to use in your project, as with previous steps you can select multiple or a single raster file. If you cannot see your raster files when using the file explorer change the file types (bottom right hand corner) to Show all files. You should then be able to select and load your raster to the virtual raster which is then displayed.
 
+You should now have your vitual raster and your bounding boxes for the areas you want to sample:
+
+![image](https://github.com/user-attachments/assets/1b552331-b2ed-49b2-8112-798d4e89fb7f)
+
+and the virtual raster loaded into the layers we created at step one. 
+
 ![image](https://github.com/user-attachments/assets/ac3f81d1-c83b-4f50-9cfe-78ba6435e481)
+
+Note: I used  a virtual raster in the event you had multiple raster files / mosaic to reduce the complexity of iterating over each raster and bounding box, its faster with a virtual raster. 
+
+Finally Step 5.
 
 ### Step 5. Raster extracts to file. 
 
@@ -70,5 +78,9 @@ Once running the progress bar will update as it processes each raster extract. I
 When completed you will have a series of folders containin the raster extracts!
 
 ![image](https://github.com/user-attachments/assets/497380c9-cf58-4868-b65a-70534dd443a6)
+
+You now have your trimmed raster extracts and are good to go! 
+
+
 
 
