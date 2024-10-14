@@ -269,11 +269,25 @@ class EarthObservationPavementAnalysis:
     def create_box_layer(self, road_layer, width, crs_string):
         self.logger.info(f"Starting create_box_layer for {road_layer.name()} with crs_string: {crs_string}")
         sample_grid_group = self.layer_manager.find_or_create_group(SAMPLE_GRID_GROUP)
-        
-        crs = QgsCoordinateReferenceSystem(crs_string)
+    
+        # Log the CRS information from the road_layer
+        self.logger.info(f"Road layer CRS: {road_layer.crs().authid()}")
+        self.logger.info(f"Road layer CRS description: {road_layer.crs().description()}")
+    
+        if not crs_string:
+            self.logger.warning("CRS string is empty, attempting to use road layer CRS")
+            crs = road_layer.crs()
+        else:
+            crs = QgsCoordinateReferenceSystem(crs_string)
+    
         if not crs.isValid():
             self.logger.error(f"Invalid CRS: {crs_string}")
-            return
+            self.logger.info("Attempting to create CRS from WKT")
+            crs = QgsCoordinateReferenceSystem()
+            crs.createFromWkt(road_layer.crs().toWkt())
+            if not crs.isValid():
+                self.logger.error("Failed to create valid CRS. Aborting box layer creation.")
+                return
 
         self.logger.info(f"CRS created successfully: {crs.authid()}")
 
